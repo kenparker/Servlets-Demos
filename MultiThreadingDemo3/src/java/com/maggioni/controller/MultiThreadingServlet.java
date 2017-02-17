@@ -16,7 +16,7 @@ public class MultiThreadingServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        log.info("Platform and Browser : "+ request.getHeader("User-Agent") + " Session : " + request.getSession());
+        log.info("Platform and Browser : "+ request.getHeader("User-Agent") + " Session  : " + request.getSession());
         for (int i = 0; i < 10; i++) {
             delay();
             counter++;
