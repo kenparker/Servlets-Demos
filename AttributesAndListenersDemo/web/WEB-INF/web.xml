@@ -31,5 +31,6 @@
     </context-param>
     <listener>
         <listener-class>com.maggioni.controllers.MyServletContextListener</listener-class>
+        <listener-class>com.maggioni.controllers.MyApplicationContextAttributeListener</listener-class>
     </listener>
 </web-app>
