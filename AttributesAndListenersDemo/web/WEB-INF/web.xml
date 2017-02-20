@@ -5,6 +5,10 @@
         <servlet-class>com.maggioni.controllers.ListenerTester</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>SessionAttributeTester</servlet-name>
+        <servlet-class>com.maggioni.controllers.ServletSessionAttributeTester</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ReadInitParametersEmail</servlet-name>
         <servlet-class>com.maggioni.controllers.ReadServletInitParametersEmail</servlet-class>
         <init-param>
@@ -19,6 +23,10 @@
     <servlet-mapping>
         <servlet-name>LisTest</servlet-name>
         <url-pattern>/ListenTest.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SessionAttributeTester</servlet-name>
+        <url-pattern>/SessionAttributeTester.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ReadInitParametersEmail</servlet-name>
