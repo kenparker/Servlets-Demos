@@ -12,13 +12,19 @@ public class ReadServletInitParametersEmail extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        log("->> processRequest startet" );
         parseHeader(response);
+        
+        InitParameter initParameter = new InitParameter();
         Enumeration<String> initParameterNames = getServletConfig().getInitParameterNames();
         while (initParameterNames.hasMoreElements()) {
-            String nextElement = initParameterNames.nextElement();
-            parseNextElement(nextElement, response);
+            final String initParameterName = initParameterNames.nextElement();
+            initParameter.setInitParameterName(initParameterName);
+            initParameter.setInitParameterValue(getServletConfig().getInitParameter(initParameterName));
+            
+            parseNextElement(initParameter, response);
         }
-
     }
 
     @Override
@@ -39,10 +45,32 @@ public class ReadServletInitParametersEmail extends HttpServlet {
         out.println("Test Init Parameters<br>");
     }
 
-    private void parseNextElement(String nextElement, HttpServletResponse response) throws IOException {
+    private void parseNextElement(InitParameter initParameter, HttpServletResponse response) throws IOException {
         PrintWriter out = response.getWriter();
-        String initParameter = getServletConfig().getInitParameter(nextElement);
-        out.println("<br> parameter name : " + nextElement + " " + initParameter);
+        out.println("<br> parameter name : " + initParameter.getInitParameterName() + " Value : " + initParameter.getInitParameterValue());
+    }
+
+}
+
+class InitParameter {
+
+    private String initParameterName;
+    private String initParameterValue;
+
+    public String getInitParameterName() {
+        return initParameterName;
+    }
+
+    public void setInitParameterName(String initParameterName) {
+        this.initParameterName = initParameterName;
+    }
+
+    public String getInitParameterValue() {
+        return initParameterValue;
+    }
+
+    public void setInitParameterValue(String initParameterValue) {
+        this.initParameterValue = initParameterValue;
     }
 
 }
