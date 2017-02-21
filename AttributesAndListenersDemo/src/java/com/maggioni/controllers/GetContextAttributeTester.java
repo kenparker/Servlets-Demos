@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ListenerTester extends HttpServlet {
+public class GetContextAttributeTester extends HttpServlet {
 
     static final Logger LOGGER = Logger.getLogger("root.ListenerTester");
     

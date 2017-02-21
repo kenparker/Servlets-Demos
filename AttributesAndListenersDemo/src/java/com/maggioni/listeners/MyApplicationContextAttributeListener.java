@@ -1,4 +1,4 @@
-package com.maggioni.controllers;
+package com.maggioni.listeners;
 
 import java.util.logging.Logger;
 import javax.servlet.ServletContextAttributeEvent;
